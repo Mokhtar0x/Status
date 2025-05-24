@@ -55,7 +55,6 @@
       color: #ff4f4f;
     }
 
-    /* مربع الانتقال */
     .action-box {
       background: linear-gradient(135deg, #00dbde, #fc00ff);
       padding: 15px 20px;
@@ -94,11 +93,12 @@
   </a>
 
   <script>
-    const platforms = ['fb', 'ig', 'gmail', 'dc', 'tt'];
+    const available = ['fb', 'gmail'];
+    const allPlatforms = ['fb', 'ig', 'gmail', 'dc', 'tt'];
 
-    platforms.forEach((id, index) => {
+    allPlatforms.forEach(id => {
       const el = document.getElementById(id);
-      if(index < 3) {
+      if (available.includes(id)) {
         el.textContent = 'متوفر';
         el.classList.add('green');
       } else {
